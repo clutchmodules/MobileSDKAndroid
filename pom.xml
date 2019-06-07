@@ -7,16 +7,35 @@
     <groupId>com.clutch</groupId>
     <artifactId>mobilesdk</artifactId>
     <version>1.0</version>
+    <packaging>jar</packaging>
 
     <name>ClutchMobileSDK</name>
     <description>Clutch Mobile SDK for Android</description>
+    <url>https://github.com/clutchmodules/MobileSDKAndroid</url>
 
-     <properties>
+    <organization>
+		<url>https://github.com/clutchmodules</url>
+		<name>Clutch</name>
+	</organization>
+
+
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>http://www.opensource.org/licenses/mit-license.php</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-         <gson-version>2.8.5</gson-version>
-         <junit.version>4.12</junit.version>
-         <maven-compiler-plugin.version>3.6.1</maven-compiler-plugin.version>
-     </properties>
+        <gson-version>2.8.5</gson-version>
+        <junit.version>4.12</junit.version>
+        <maven-compiler-plugin.version>3.6.1</maven-compiler-plugin.version>
+        <maven-source-plugin.version>3.0.1</maven-source-plugin.version>
+        <maven-javadoc-plugin.version>2.10.4</maven-javadoc-plugin.version>
+        <maven-deploy-plugin.version>2.8.2</maven-deploy-plugin.version>
+    </properties>
 
 
     <dependencies>
@@ -54,6 +73,7 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>${maven-compiler-plugin.version}</version>
                 <configuration>
+                    <encoding>UTF-8</encoding>
                     <source>1.8</source>
                     <target>1.8</target>
                     <compilerArgs>
@@ -61,6 +81,48 @@
                     </compilerArgs>
                 </configuration>
             </plugin>
+            <plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>${maven-source-plugin.version}</version>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+            <plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>${maven-javadoc-plugin.version}</version>
+				<configuration>
+					<encoding>UTF-8</encoding>
+				</configuration>
+				<executions>
+					<execution>
+						<id>attach-javadoc</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+            <plugin>
+				<artifactId>maven-deploy-plugin</artifactId>
+				<version>${maven-deploy-plugin.version}</version>
+				<executions>
+					<execution>
+						<id>default-deploy</id>
+						<phase>deploy</phase>
+						<goals>
+							<goal>deploy</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
         </plugins>
     </build>
 
