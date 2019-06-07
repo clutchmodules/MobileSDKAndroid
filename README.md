@@ -2,6 +2,26 @@
 
 Library for access to the Clutch Mobile API from Android applications.
 
+## Download
+
+Gradle:
+```gradle
+dependencies {
+  implementation 'com.clutch:mobilesdk:1.0.1'
+}
+```
+
+Maven:
+```xml
+<dependency>
+  <groupId>com.clutch</groupId>
+  <artifactId>mobilesdk</artifactId>
+  <version>1.0.1</version>
+</dependency>
+```
+
+[Jar downloads](https://maven-badges.herokuapp.com/maven-central/com.clutch/mobilesdk) are available from Maven Central.
+
 ## Configuration
 
 Obtain an app key and secret for the Mobile API from [Clutch](https://www.clutch.com).
